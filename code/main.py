@@ -99,6 +99,8 @@ data_path = args.data_path
 train_img_list=glob.glob(os.path.join(data_path, 'train/image/*.tif'))
 test_img_list=glob.glob(os.path.join(data_path, 'test/image/*.tif'))
 
+print('train_img_list: ', len(train_img_list))
+print('test_img_list: ', len(test_img_list))
 
 # img_list = get_img_list(args.data_path, flag='training')
 # test_img_list = get_img_list(args.data_path, flag='test')
