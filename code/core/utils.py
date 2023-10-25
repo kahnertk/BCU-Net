@@ -4,6 +4,7 @@ import os
 
 from PIL import Image
 import cv2
+from PIL import Image
 import csv
 import torch
 #from models import *
@@ -39,7 +40,10 @@ def get_data(data_path, img_path, img_size=256, gpu=True,flag=False):  #img_path
         # label_path = os.path.join(data_path, 'label/image/', img_name[i])
 
         img = cv2.imread(img_path[i])
-        label = cv2.imread(img_path[i].replace('image','label').replace('_training.tif','_manual1.gif'),0)
+        label = Image.open(img_path[i].replace('image','label').replace('_training.tif','_manual1.gif'))
+        label = label.convert('L')
+        label = np.array(label)
+        
         img_shape.append(img.shape)
         label_ori.append(label)
         # label[label < 150] = 0
