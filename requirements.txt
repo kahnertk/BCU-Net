@@ -1,6 +1,6 @@
 matplotlib
-sklearn
+scikit-learn
 numpy
-cv2
+opencv-python
 torch
 torchvision
