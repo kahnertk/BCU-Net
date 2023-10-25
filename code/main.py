@@ -12,7 +12,7 @@ import time
 from torch.autograd import Variable
 
 from core.unet_parts import RecallCrossEntropy
-from core.utils import calculate_Accuracy, get_model, get_data, get_k_fold_data
+from core.utils import calculate_Accuracy, get_model, get_data
 from pylab import *
 import random
 from test import fast_test

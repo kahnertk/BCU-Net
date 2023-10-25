@@ -17,7 +17,7 @@ import argparse
 import time
 
 from core.models import BCUNet
-from core.utils import calculate_Accuracy, get_data,get_model
+from core.utils import calculate_Accuracy, get_data, get_model
 from pylab import *
 
 plt.switch_backend('agg')
