@@ -113,7 +113,7 @@ IOU_best = 0
 
 print ('This model is %s_%s_%s_%s' % (model_name, args.n_class, args.img_size,args.my_description))
 if not os.path.exists(r'../models/%s_%s' % (model_name, args.my_description)):
-    os.mkdir(r'../models/%s_%s' % (model_name, args.my_description), exist_ok=True)
+    os.makedirs(r'../models/%s_%s' % (model_name, args.my_description), exist_ok=True)
 
 with open(r'../logs/%s_%s.txt' % (model_name, args.my_description), 'w+') as f:
     f.write('This model is %s_%s: ' % (model_name, args.my_description)+'\n')
