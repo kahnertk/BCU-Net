@@ -4,7 +4,7 @@ import torch
 import torch.nn as nn
 
 import sklearn.metrics as metrics
-from core.models import UNet, BCUNet
+from core.models import BCUNet
 import os
 import argparse
 import time

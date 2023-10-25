@@ -13,7 +13,7 @@ from torch import nn
 from torch.autograd import Variable
 
 # from core.models import UNet
-from core.models import UNet, BCUNet
+from core.models import BCUNet
 
 
 def get_data(data_path, img_path, img_size=256, gpu=True,flag=False):  #img_path='../data/Medical_Datasets/train/image/im0077.png'
