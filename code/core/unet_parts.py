@@ -82,8 +82,6 @@ class Up(nn.Module):
         return self.conv(x)
 
 
-
-
 def conv1x1(in_channels, out_channels, groups=1):
     return nn.Sequential(nn.Conv2d(
         in_channels,
@@ -92,6 +90,23 @@ def conv1x1(in_channels, out_channels, groups=1):
         groups=groups,
         stride=1),
         nn.BatchNorm2d(out_channels))
+
+def upconv2x2(in_channels, out_channels, mode='transpose'):
+    if mode == 'transpose':
+        return nn.ConvTranspose2d(
+            in_channels,
+            out_channels,
+            kernel_size=2,
+            stride=2)
+    else:
+        # out_channels is always going to be the same
+        # as in_channels
+        return nn.Sequential(
+            nn.Upsample(mode='bilinear', scale_factor=2),
+            conv1x1(in_channels, out_channels),
+            nn.BatchNorm2d(out_channels))
+
+
 class OutConv(nn.Module):
     def __init__(self, in_channels, out_channels):
         super(OutConv, self).__init__()
