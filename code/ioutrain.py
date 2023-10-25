@@ -4,7 +4,7 @@ import torch
 import torch.nn as nn
 
 import sklearn.metrics as metrics
-from core.models import UNet
+from core.models import UNet, BCUNet
 import os
 import argparse
 import time
@@ -21,7 +21,7 @@ from warmlearnrate import adjust_learning_rate
 plt.switch_backend('agg')
 
 # --------------------------------------------------------------------------------
-model_name= 'BCU-Net'
+model_name= 'BCUNet'
 # --------------------------------------------------------------------------------
 parser = argparse.ArgumentParser(description='PyTorch ASOCT_Demo')
 
@@ -77,7 +77,7 @@ print(args)
 os.environ['CUDA_DEVICE_ORDER'] = "PCI_BUS_ID"
 os.environ['CUDA_VISIBLE_DEVICES'] = args.gpu_avaiable
 
-model = BCU-Net(n_channels=3,n_classes=args.n_class)
+model = BCUNet(n_channels=3,n_classes=args.n_class)
 if torch.cuda.device_count() > 1:
     print("Let's use", torch.cuda.device_count(), "GPUs!")
     model = nn.DataParallel(model)

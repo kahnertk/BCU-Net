@@ -13,7 +13,7 @@ from torch import nn
 from torch.autograd import Variable
 
 # from core.models import UNet
-from core.models import  UNet
+from core.models import UNet, BCUNet
 
 
 def get_data(data_path, img_path, img_size=256, gpu=True,flag=False):  #img_path='../data/Medical_Datasets/train/image/im0077.png'
@@ -91,6 +91,8 @@ def calculate_Accuracy(confusion):
 def get_model(model_name):
     if model_name=='UNet':
         return UNet
+    if model_name=="BCUNet":
+        return BCUNet
 
 
 def update_variance(self, labels, pred1, pred2):

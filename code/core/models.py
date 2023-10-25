@@ -6,9 +6,9 @@ from core.convnext import convnext_base
 from core.unet_parts import *
 
 
-class BCU-Net(nn.Module):
+class BCUNet(nn.Module):
     def __init__(self, n_channels, n_classes, bilinear=False):
-        super(BCU-Net, self).__init__()
+        super(BCUNet, self).__init__()
         self.n_channels = n_channels
         self.n_classes = n_classes
         self.backbone = convnext_base(pretrained=True, in_22k=True)
