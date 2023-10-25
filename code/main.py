@@ -115,6 +115,9 @@ print ('This model is %s_%s_%s_%s' % (model_name, args.n_class, args.img_size,ar
 if not os.path.exists(r'../models/%s_%s' % (model_name, args.my_description)):
     os.makedirs(r'../models/%s_%s' % (model_name, args.my_description), exist_ok=True)
 
+if not os.path.exists(r'../logs/'):
+    os.makedirs(r'../logs/', exist_ok=True)
+
 with open(r'../logs/%s_%s.txt' % (model_name, args.my_description), 'w+') as f:
     f.write('This model is %s_%s: ' % (model_name, args.my_description)+'\n')
     f.write('args: '+str(args)+'\n')
