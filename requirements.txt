@@ -5,3 +5,6 @@ opencv-python
 torch
 torchvision
 xlrd
+xlwt
+xlsxwriter
+xlutils

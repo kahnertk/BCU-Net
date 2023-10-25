@@ -16,7 +16,7 @@ from core.utils import calculate_Accuracy, get_model, get_data
 from pylab import *
 import random
 from test import fast_test
-from warmlearnrate import adjust_learning_rate
+#from warmlearnrate import adjust_learning_rate
 
 plt.switch_backend('agg')
 
